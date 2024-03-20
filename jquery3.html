@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <h2>letakan kursor ke masing-masing kotak untuk melihat gambar</h2>
+    <div id="div1">
+        <audio id="audio1" src="audio/bebek.mp3"></audio>
+        Hewan Bebek
+    </div>
+    <div id="div2">
+        <audio id="audio2" src="audio/kucing.mp3"></audio>
+        Hewan Kucing
+    </div>
+    <div id="div3">
+        <audio id="audio3" src="audio/ayam.mp3"></audio>
+        Hewan Ayam
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $('document').ready(function(){
+            $("div").mouseout(function(){
+                $(this).css({
+                    background: "green"
+                });
+            });
+            $('#div1').mouseover(function(){
+                $(this).css({
+                    background: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/White_domesticated_duck%2C_stretching.jpg/1200px-White_domesticated_duck%2C_stretching.jpg')"
+                });
+                document.getElementById("audio1").play();
+            });
+            $('#div2').mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.mongabay.co.id/wp-content/uploads/2023/06/kucing-rumahan-unsplash-768x512.jpeg')"
+                });
+                document.getElementById("audio2").play();
+            });
+            $('#div3').mouseover(function(){
+                $(this).css({
+                    background: "url('https://www.shutterstock.com/image-photo/young-brown-hen-isolated-on-600nw-2359868455.jpg')"
+                });
+                document.getElementById("audio3").play();
+            });
+
+        });
+    </script>
+</body>
+</html>
